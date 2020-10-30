@@ -293,7 +293,7 @@ describe('Apague e desfaça as filtragens dos dados da tabela ao clicar no ícon
     fireEvent.click(filters[0].querySelector('button'));
   };
 
-  it('Adiciona um filtro e verifica se a tabela foi atualizada com as informações filtradas, depois remove o filtro e verifica se os valores da tabela voltaram ao original', async () => {
+  it('Adiciona um filtro e verifica se a tabela foi atualizada com as informações filtradas, depois remove o filtro e verifica se os valores da tabela voltaram aos originais', async () => {
     await act(async () => {
       render(<App />);
     });
@@ -310,7 +310,7 @@ describe('Apague e desfaça as filtragens dos dados da tabela ao clicar no ícon
     expect(await screen.findAllByRole(ROW_ROLE_SELECTOR)).toHaveLength(11);
   });
 
-  it('Adiciona dois filtros e verifica se a tabela foi atualizada com as informações filtradas, depois remove os filtros e verifica se os valores da tabela voltaram ao original', async () => {
+  it('Adiciona dois filtros e verifica se a tabela foi atualizada com as informações filtradas, depois remove os filtros e verifica se os valores da tabela voltaram aos originais', async () => {
     await act(async () => {
       render(<App />);
     });
