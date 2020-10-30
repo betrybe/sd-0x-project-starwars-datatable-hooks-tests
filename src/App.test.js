@@ -28,7 +28,7 @@ const mockFetch = () => {
     }));
 }
 
-describe('Faça uma requisição para o endpoint `/planets` da API de Star Wars e construa uma tabela com os dados retornados, com exceção dos da coluna `residents`', () => {
+describe('Faça uma requisição para o endpoint `/planets` da API de Star Wars e preencha uma tabela com os dados retornados, com exceção dos da coluna `residents`', () => {
   beforeAll(mockFetch);
   beforeEach(cleanup);
 
@@ -293,7 +293,7 @@ describe('Apague e desfaça as filtragens dos dados da tabela ao clicar no ícon
     fireEvent.click(filters[0].querySelector('button'));
   };
 
-  it('adiciona e remove um filtro', async () => {
+  it('Adiciona um filtro e verifica se a tabela foi atualizada com as informações filtradas, depois remove o filtro e verifica se os valores da tabela voltaram ao original', async () => {
     await act(async () => {
       render(<App />);
     });
@@ -310,7 +310,7 @@ describe('Apague e desfaça as filtragens dos dados da tabela ao clicar no ícon
     expect(await screen.findAllByRole(ROW_ROLE_SELECTOR)).toHaveLength(11);
   });
 
-  it('adiciona e remove dois filtros', async () => {
+  it('Adiciona dois filtros e verifica se a tabela foi atualizada com as informações filtradas, depois remove os filtros e verifica se os valores da tabela voltaram ao original', async () => {
     await act(async () => {
       render(<App />);
     });
