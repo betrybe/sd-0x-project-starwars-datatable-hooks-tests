@@ -284,7 +284,7 @@ describe('Não utilize filtros repetidos', () => {
   });
 });
 
-describe('Apague e desfaça as filtragens dos dados da tabela ao clicar no ícone de `X` que deve existir em cada filtro de valores numéricos', () => {
+describe('Apague e desfaça as filtragens dos dados da tabela ao clicar no ícone de `X`', () => {
   beforeAll(mockFetch);
   beforeEach(cleanup);
 
