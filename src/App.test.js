@@ -67,7 +67,7 @@ describe('Faça uma requisição para o endpoint `/planets` da API de Star Wars 
     };
   });
 
-  it('renderiza uma tabela com 13 colunas', async () => {
+  it('a tabela deve ter 13 colunas', async () => {
     await act(async () => {
       render(<App />);
     });
@@ -75,7 +75,7 @@ describe('Faça uma requisição para o endpoint `/planets` da API de Star Wars 
     expect(await screen.findAllByRole(COLUMN_ROLE_SELECTOR)).toHaveLength(13);
   });
 
-  it('renderiza uma tabela com 11 linhas', async () => {
+  it('a tabela deve ter uma linha para cada planeta retornado', async () => {
     await act(async () => {
       render(<App />);
     });
@@ -284,7 +284,7 @@ describe('Não utilize filtros repetidos', () => {
   });
 });
 
-describe('Apague e desfaça as filtragens dos dados da tabela ao clicar no ícone de `X`', () => {
+describe('Apague o filtro de valores numéricos e desfaça as filtragens dos dados da tabela ao clicar no ícone de `X` de um dos filtro', () => {
   beforeAll(mockFetch);
   beforeEach(cleanup);
 
@@ -293,7 +293,7 @@ describe('Apague e desfaça as filtragens dos dados da tabela ao clicar no ícon
     fireEvent.click(filters[0].querySelector('button'));
   };
 
-  it('Adiciona um filtro e verifica se a tabela foi atualizada com as informações filtradas, depois remove o filtro e verifica se os valores da tabela voltaram aos originais', async () => {
+  it('Adiciona um filtro e verifica se a tabela foi atualizada com as informações filtradas, depois remove o filtro e verifica se os valores da tabela voltaram ao original', async () => {
     await act(async () => {
       render(<App />);
     });
@@ -310,7 +310,7 @@ describe('Apague e desfaça as filtragens dos dados da tabela ao clicar no ícon
     expect(await screen.findAllByRole(ROW_ROLE_SELECTOR)).toHaveLength(11);
   });
 
-  it('Adiciona dois filtros e verifica se a tabela foi atualizada com as informações filtradas, depois remove os filtros e verifica se os valores da tabela voltaram aos originais', async () => {
+  it('Adiciona dois filtros e verifica se a tabela foi atualizada com as informações filtradas, depois remove os filtros e verifica se os valores da tabela voltaram ao original', async () => {
     await act(async () => {
       render(<App />);
     });
